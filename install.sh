@@ -71,6 +71,7 @@ fi
 echo '. ~/.bashrc_extra' >> .bashrc
 
 cat > $HOME/.bashrc_extra << 'EOF'
+shopt -s globstar
 PATH=$HOME/.local/bin:$PATH
 $(ghc-select ghc-8.0.1 cabal-head alex-3.1.7 happy-1.19.5)
 $(stack --bash-completion-script stack)
