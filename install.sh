@@ -68,7 +68,7 @@ else
     cp $HOME/.bashrc $HOME/.bashrc_orig
 fi
 
-echo '. ~/bashrc_extra' >> .bashrc
+echo '. ~/.bashrc_extra' >> .bashrc
 
 cat > $HOME/.bashrc_extra << 'EOF'
 PATH=$HOME/.local/bin:$PATH
