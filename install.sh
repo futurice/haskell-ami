@@ -155,4 +155,8 @@ all)
     sudo sh $0 docker
 ;;
 
+cleanup)
+	rm -rf packdeps* ghc-select* hackage-cli*
+;;
+
 esac
