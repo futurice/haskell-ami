@@ -87,7 +87,7 @@ ghc-select)
         cd ghc-select
         export PATH=/opt/ghc/8.0.1/bin:/opt/cabal/head/bin:$PATH
         cabal update
-        cabal new-build
+        cabal new-build -j2
         mkdir -p $HOME/.local/bin
         cp `find dist-newstyle/build -name ghc-select -type f | head -n 1` $HOME/.local/bin/
         $($HOME/.local/bin/ghc-select ghc-8.0.1 cabal-head)
@@ -102,7 +102,7 @@ hackage-cli)
         git clone https://github.com/hackage-trustees/hackage-cli.git
         cd hackage-cli
         $($HOME/.local/bin/ghc-select ghc-8.0.1 cabal-head)
-        cabal new-build
+        cabal new-build -j2
         cp `find dist-newstyle/build -name hackage-cli -type f | head -n 1` $HOME/.local/bin/
     fi
 ;;
@@ -118,7 +118,7 @@ packdeps)
         cabal get packdeps
         mv packdeps-* packdeps
         cd packdeps
-        cabal new-build
+        cabal new-build -j2
         cp `find dist-newstyle/build -name packdeps -type f | head -n 1` $HOME/.local/bin/
     fi
 ;;
